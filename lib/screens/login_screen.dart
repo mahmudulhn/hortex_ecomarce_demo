@@ -76,7 +76,7 @@ class LoginScreen extends StatelessWidget {
                             decoration: InputDecoration(
                               hintText: 'Enter Your Mobile Number',
                               hintStyle: TextStyle(
-                                color: AppColors.textColor,
+                                color: AppColors.hintTextColor,
                               ),
                               focusedBorder: InputBorder.none,
                               enabledBorder: InputBorder.none,
