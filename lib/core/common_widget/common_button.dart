@@ -9,12 +9,15 @@ class CommonButton extends StatelessWidget {
     required this.height,
     required this.width,
     required this.onClick,
+    this.color,
   });
 
   final String title;
   final double height;
   final double width;
   final void Function() onClick;
+
+  final int? color;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class CommonButton extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: AppColors.primary,
+          color: color == null ? AppColors.primary : Color(color!),
           borderRadius: BorderRadius.circular(4),
         ),
         height: height,

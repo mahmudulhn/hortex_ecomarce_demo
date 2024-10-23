@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:hortex_ecomarce_demo/core/app_colors.dart';
 import 'package:hortex_ecomarce_demo/core/assets.dart';
 
-class ListItem extends StatelessWidget {
+import '../../productList/widgets/cart_app_counter.dart';
+
+class ListItem extends StatefulWidget {
   const ListItem({
     super.key,
     // required this.title,
@@ -10,10 +12,13 @@ class ListItem extends StatelessWidget {
     // required this.image,
   });
 
-  // final String title;
-  // final double price;
-  // final String image;
+  @override
+  State<ListItem> createState() => _ListItemState();
+}
 
+class _ListItemState extends State<ListItem> {
+  bool isAddedToCart = false;
+  // final String title;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -58,20 +63,29 @@ class ListItem extends StatelessWidget {
                 ],
               ),
               const Spacer(),
-              Container(
-                // color: AppColors.bgGray,
-                margin: const EdgeInsets.all(16),
-                height: 30,
-                width: 30,
-                decoration: BoxDecoration(
-                  color: AppColors.primary,
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                child: const Icon(
-                  Icons.add,
-                  color: AppColors.white,
-                ),
-              ),
+              isAddedToCart
+                  ? const AddCartCounter()
+                  : InkWell(
+                      onTap: () {
+                        setState(() {
+                          isAddedToCart = true;
+                        });
+                      },
+                      child: Container(
+                        // color: AppColors.bgGray,
+                        margin: const EdgeInsets.all(16),
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                          color: AppColors.primary,
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: const Icon(
+                          Icons.add,
+                          color: AppColors.white,
+                        ),
+                      ),
+                    ),
             ],
           ),
           const SizedBox(
@@ -80,7 +94,7 @@ class ListItem extends StatelessWidget {
           const Divider(
             height: 1,
             color: AppColors.borderGray,
-          )
+          ),
         ],
       ),
     );
