@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:hortex_ecomarce_demo/core/assets.dart';
 import 'package:hortex_ecomarce_demo/core/common_widget/common_button.dart';
@@ -6,7 +7,7 @@ import 'package:hortex_ecomarce_demo/screens/productList/widgets/list_item.dart'
 import '../../../core/app_colors.dart';
 
 class ProductListScreen extends StatefulWidget {
-  ProductListScreen({super.key});
+  const ProductListScreen({super.key});
 
   @override
   State<ProductListScreen> createState() => _ProductListScreenState();
@@ -53,7 +54,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
             Stack(
               children: [
                 SizedBox(
-                  height: 150,
+                  height: 150.h,
                   width: double.infinity,
                   child: Image.asset(
                     AssetsPath.productListBg,
@@ -61,68 +62,71 @@ class _ProductListScreenState extends State<ProductListScreen> {
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SizedBox(
-                        height: 40,
+                      SizedBox(
+                        height: 40.h,
                       ),
                       Row(
                         children: [
                           ClipRRect(
-                            borderRadius: BorderRadius.circular(30),
+                            borderRadius: BorderRadius.circular(30.r),
                             child: Container(
                               alignment: Alignment.topLeft,
-                              height: 30,
-                              width: 30,
+                              height: 30.h,
+                              width: 30.w,
                               child: Image.asset(AssetsPath.backIcon),
                             ),
                           ),
-                          const SizedBox(
-                            width: 10,
+                          SizedBox(
+                            width: 10.w,
                           ),
-                          const Text(
+                          Text(
                             'Product List',
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 18.sp,
                               fontWeight: FontWeight.w600,
                               color: AppColors.primary,
                             ),
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 13,
+                      SizedBox(
+                        height: 13.h,
                       ),
                       Container(
-                        height: 48,
+                        alignment: Alignment.center,
+                        height: 48.h,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border:
-                              Border.all(color: AppColors.borderGray, width: 1),
+                          borderRadius: BorderRadius.circular(10.r),
+                          border: Border.all(
+                              color: AppColors.borderGray, width: 1.w),
                           color: AppColors.white,
                         ),
                         child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(10),
+                              padding: EdgeInsets.all(10.h),
                               child: Image.asset(
                                 AssetsPath.searchIcon,
-                                height: 30,
-                                width: 30,
+                                height: 30.h,
+                                width: 30.r,
                               ),
                             ),
-                            const Expanded(
+                            Expanded(
                               child: TextField(
                                 keyboardType: TextInputType.text,
                                 textInputAction: TextInputAction.none,
                                 decoration: InputDecoration(
                                   hintText: 'Search For Item',
+                                  isDense: true,
                                   hintStyle: TextStyle(
                                     color: AppColors.hintTextColor,
                                     fontWeight: FontWeight.w400,
-                                    fontSize: 16,
+                                    fontSize: 16.sp,
                                   ),
                                   border: InputBorder.none,
                                 ),
@@ -136,12 +140,12 @@ class _ProductListScreenState extends State<ProductListScreen> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 8,
+            SizedBox(
+              height: 8.h,
             ),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 22),
-              height: 28,
+              padding: EdgeInsets.symmetric(horizontal: 22.w),
+              height: 28.h,
               width: double.infinity,
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
@@ -160,15 +164,15 @@ class _ProductListScreenState extends State<ProductListScreen> {
                           decoration: BoxDecoration(
                               border: Border(
                             bottom: index == selectedIndex
-                                ? const BorderSide(
-                                    color: AppColors.primary, width: 3)
-                                : const BorderSide(
-                                    color: Colors.transparent, width: 3),
+                                ? BorderSide(
+                                    color: AppColors.primary, width: 3.w)
+                                : BorderSide(
+                                    color: Colors.transparent, width: 3.w),
                           )),
                           child: Text(
                             categories[index],
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 18.sp,
                               fontWeight: FontWeight.w600,
                               color: index == selectedIndex
                                   ? AppColors.primary
@@ -177,21 +181,21 @@ class _ProductListScreenState extends State<ProductListScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        width: 22,
+                      SizedBox(
+                        width: 22.w,
                       ),
                     ],
                   );
                 },
               ),
             ),
-            const Divider(
-              height: 0.5,
+            Divider(
+              height: 0.5.h,
               color: AppColors.borderGray,
             ),
             Expanded(
               child: ListView.builder(
-                padding: const EdgeInsets.only(top: 14),
+                padding: EdgeInsets.only(top: 14.h),
                 itemCount: 10,
                 physics: const BouncingScrollPhysics(),
                 // scrollDirection: Axis.horizontal,
@@ -199,8 +203,8 @@ class _ProductListScreenState extends State<ProductListScreen> {
               ),
             ),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              height: 70,
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              height: 70.h,
               decoration: const BoxDecoration(
                 color: AppColors.primary,
               ),
@@ -208,42 +212,42 @@ class _ProductListScreenState extends State<ProductListScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    height: 40,
-                    width: 55,
+                    height: 40.h,
+                    width: 55.w,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4),
+                      borderRadius: BorderRadius.circular(4.r),
                       color: const Color(0XFF10683B),
                     ),
-                    child: const Text(
+                    child: Text(
                       '05',
                       style: TextStyle(
                         color: AppColors.white,
-                        fontSize: 18,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    width: 9,
+                  SizedBox(
+                    width: 9.w,
                   ),
                   CommonButton(
                     title: 'View Cart',
-                    height: 40,
-                    width: 107,
+                    height: 40.h,
+                    width: 107.w,
                     onClick: () {},
                     color: 0XFF10683B,
                   ),
                   const Spacer(),
                   Image.asset(
                     AssetsPath.takaIcon,
-                    height: 14,
+                    height: 14.h,
                   ),
-                  const Text(
+                  Text(
                     '1450.00',
                     style: TextStyle(
                       color: AppColors.white,
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.w600,
                     ),
                   ),

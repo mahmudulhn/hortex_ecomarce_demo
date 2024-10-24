@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:hortex_ecomarce_demo/core/assets.dart';
 
@@ -9,7 +10,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 68),
+        padding: EdgeInsets.symmetric(horizontal: 68.w),
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
@@ -20,7 +21,7 @@ class SplashScreen extends StatelessWidget {
         ),
         child: Image.asset(
           AssetsPath.splashIcon,
-          height: 94,
+          height: 94.h,
           width: double.infinity,
         ),
       ),

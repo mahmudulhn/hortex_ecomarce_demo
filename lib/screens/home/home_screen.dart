@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:hortex_ecomarce_demo/core/assets.dart';
 import 'package:hortex_ecomarce_demo/screens/home/widgets/category_grid_item.dart';
@@ -12,13 +13,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leadingWidth: 50,
+        leadingWidth: 50.w,
         leading: ClipRRect(
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(30.r),
           child: Container(
-            margin: const EdgeInsets.only(left: 20),
-            height: 30,
-            width: 30,
+            margin: EdgeInsets.only(left: 20.h),
+            height: 30.h,
+            width: 30.r,
             child: Image.asset(AssetsPath.userIcon),
           ),
         ),
@@ -27,10 +28,10 @@ class HomeScreen extends StatelessWidget {
           fit: BoxFit.cover,
         ),
         backgroundColor: Colors.transparent,
-        title: const Text(
+        title: Text(
           'Login',
           style: TextStyle(
-            fontSize: 16,
+            fontSize: 16.sp,
             fontWeight: FontWeight.w600,
             color: AppColors.primary,
           ),
@@ -40,8 +41,8 @@ class HomeScreen extends StatelessWidget {
             clipBehavior: Clip.none,
             children: [
               SizedBox(
-                height: 30,
-                width: 30,
+                height: 30.h,
+                width: 30.w,
                 child: Image.asset(AssetsPath.cartIcon),
               ),
               Positioned(
@@ -49,16 +50,16 @@ class HomeScreen extends StatelessWidget {
                 right: -5,
                 child: Container(
                   alignment: Alignment.center,
-                  height: 15,
-                  width: 15,
+                  height: 15.h,
+                  width: 15.w,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(15.r),
                     color: AppColors.white,
                   ),
-                  child: const Text(
+                  child: Text(
                     style: TextStyle(
                       color: AppColors.primary,
-                      fontSize: 10,
+                      fontSize: 10.sp,
                       fontWeight: FontWeight.bold,
                     ),
                     '5',
@@ -67,8 +68,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(
-            width: 20,
+          SizedBox(
+            width: 20.w,
           ),
         ],
       ),
@@ -78,40 +79,41 @@ class HomeScreen extends StatelessWidget {
           color: AppColors.white,
           child: Column(
             children: [
-              const SizedBox(
-                height: 16,
+              SizedBox(
+                height: 16.h,
               ),
-              const SizedBox(
-                height: 19,
+              SizedBox(
+                height: 19.h,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: Container(
-                  height: 48,
+                  height: 48.h,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: AppColors.borderGray, width: 1),
+                    borderRadius: BorderRadius.circular(10.r),
+                    border: Border.all(color: AppColors.borderGray, width: 1.w),
                   ),
                   child: Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(10),
+                        padding: EdgeInsets.all(10.r),
                         child: Image.asset(
                           AssetsPath.searchIcon,
-                          height: 30,
-                          width: 30,
+                          height: 30.h,
+                          width: 30.w,
                         ),
                       ),
-                      const Expanded(
+                      Expanded(
                         child: TextField(
                           keyboardType: TextInputType.text,
                           textInputAction: TextInputAction.none,
                           decoration: InputDecoration(
                             hintText: 'Search For Item',
+                            isDense: true,
                             hintStyle: TextStyle(
                               color: AppColors.hintTextColor,
                               fontWeight: FontWeight.w400,
-                              fontSize: 16,
+                              fontSize: 16.sp,
                             ),
                             border: InputBorder.none,
                           ),
@@ -121,21 +123,21 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 17,
+              SizedBox(
+                height: 17.h,
               ),
               categoryGridItem(context),
-              const SizedBox(
-                height: 34,
+              SizedBox(
+                height: 34.h,
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
                 width: double.infinity,
-                child: const Text(
+                child: Text(
                   'Recommended',
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
-                    fontSize: 24,
+                    fontSize: 24.sp,
                     color: AppColors.black,
                   ),
                   textAlign: TextAlign.left,
@@ -164,7 +166,7 @@ class HomeScreen extends StatelessWidget {
     var aspectRatio = width / cellHeight;
 
     return Container(
-        padding: const EdgeInsets.all(15),
+        padding: EdgeInsets.all(15.h),
         child: GridView.builder(
           physics: const ScrollPhysics(),
           shrinkWrap: true,

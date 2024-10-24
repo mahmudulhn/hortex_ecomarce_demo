@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'package:hortex_ecomarce_demo/screens/cart/cart_screen.dart';
 import 'package:hortex_ecomarce_demo/screens/home/home_screen.dart';
 import 'package:hortex_ecomarce_demo/screens/login_screen.dart';
 import 'package:hortex_ecomarce_demo/screens/otp_screen.dart';
 import 'package:hortex_ecomarce_demo/screens/productList/product_list_screen.dart';
 import 'package:hortex_ecomarce_demo/screens/signup_screen.dart';
-
 import 'package:hortex_ecomarce_demo/screens/splash_screen.dart';
 
 void main() {
@@ -30,9 +30,8 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: ProductListScreen(),
+            home: const CartScreen(),
           );
-          ;
         });
   }
 }

@@ -18,16 +18,27 @@ class _AddCartCounterState extends State<AddCartCounter> {
   @override
   Widget build(context) {
     return isCounterZero
-        ? CommonButton(
-            title: 'Add',
-            height: 40.h,
-            width: 55.w,
-            onClick: () {
+        ? InkWell(
+            onTap: () {
               setState(() {
-                isCounterZero = true;
+                isCounterZero = false;
                 counter = 1;
               });
             },
+            child: Container(
+              // color: AppColors.bgGray,
+              margin: const EdgeInsets.all(16),
+              height: 30.h,
+              width: 30.w,
+              decoration: BoxDecoration(
+                color: AppColors.primary,
+                borderRadius: BorderRadius.circular(4.r),
+              ),
+              child: const Icon(
+                Icons.add,
+                color: AppColors.white,
+              ),
+            ),
           )
         : Container(
             height: 40.h,
