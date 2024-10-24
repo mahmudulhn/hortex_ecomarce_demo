@@ -3,9 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:hortex_ecomarce_demo/core/app_colors.dart';
 import 'package:hortex_ecomarce_demo/core/assets.dart';
-import 'package:hortex_ecomarce_demo/screens/home/widgets/cart_add_counter.dart';
 import 'package:hortex_ecomarce_demo/core/common_widget/common_button.dart';
-import 'package:hortex_ecomarce_demo/main.dart';
+import 'package:hortex_ecomarce_demo/screens/productList/widgets/cart_app_counter.dart';
 
 class ListItem extends StatefulWidget {
   const ListItem({super.key});
@@ -15,33 +14,33 @@ class ListItem extends StatefulWidget {
 }
 
 class _ListItemState extends State<ListItem> {
-  bool isAddedToCart = true;
+  bool isAddedToCart = false;
 
   @override
   Widget build(context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
       // height: 110,
       // width: double.infinity,
       decoration: BoxDecoration(
         border: Border.all(
           color: AppColors.borderGray,
-          width: 1,
+          width: 1.w,
         ),
         color: AppColors.white,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.r),
       ),
       child: Row(
         children: [
           Container(
-            margin: const EdgeInsets.all(10),
-            padding: const EdgeInsets.all(11),
+            margin: EdgeInsets.all(10.h),
+            padding: EdgeInsets.all(11.h),
             decoration: BoxDecoration(
               border: Border.all(
                 color: AppColors.borderGray,
-                width: 1,
+                width: 1.w,
               ),
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(8.r),
             ),
             child: Image.asset(
               AssetsPath.listItemDummyImage,
@@ -80,19 +79,19 @@ class _ListItemState extends State<ListItem> {
           ),
           const Spacer(),
           isAddedToCart
-              ? CommonButton(
+              ? const AddCartCounter()
+              : CommonButton(
                   title: 'Add',
                   height: 40.h,
                   width: 55.w,
                   onClick: () {
                     setState(
                       () {
-                        isAddedToCart = false;
+                        isAddedToCart = true;
                       },
                     );
                   },
-                )
-              : const AddCartCounter(),
+                ),
           SizedBox(
             width: 20.w,
           ),

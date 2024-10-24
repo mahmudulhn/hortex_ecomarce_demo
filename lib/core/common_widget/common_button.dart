@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:hortex_ecomarce_demo/core/app_colors.dart';
 
@@ -27,14 +28,14 @@ class CommonButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: color == null ? AppColors.primary : Color(color!),
-          borderRadius: BorderRadius.circular(4),
+          borderRadius: BorderRadius.circular(4.r),
         ),
         height: height,
         width: width,
         child: Text(
           title,
-          style: const TextStyle(
-            fontSize: 16,
+          style: TextStyle(
+            fontSize: 16.sp,
             fontWeight: FontWeight.w700,
             color: AppColors.white,
           ),

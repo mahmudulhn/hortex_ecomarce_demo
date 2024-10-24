@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:hortex_ecomarce_demo/core/app_colors.dart';
 import 'package:hortex_ecomarce_demo/core/assets.dart';
@@ -17,45 +18,45 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 62,
+              SizedBox(
+                height: 62.h,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 100),
+                padding: EdgeInsets.symmetric(horizontal: 100.w),
                 child: Image.asset(
                   AssetsPath.loginLogo,
-                  height: 56,
+                  height: 56.h,
                   // fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(
-                height: 61,
+              SizedBox(
+                height: 61.h,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 57),
+                padding: EdgeInsets.symmetric(horizontal: 57.w),
                 child: Image.asset(
                   AssetsPath.loginImage,
-                  height: 294,
+                  height: 294.h,
                 ),
               ),
-              const SizedBox(
-                height: 50,
+              SizedBox(
+                height: 50.h,
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 67),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 67.w),
                 child: Text(
                   'We’ll send you One Time Password on this number',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
-                    fontSize: 18,
+                    fontSize: 18.sp,
                     color: AppColors.textColor,
                   ),
                 ),
               ),
-              const SizedBox(height: 22),
+              SizedBox(height: 22.h),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 49),
+                padding: EdgeInsets.symmetric(horizontal: 49.w),
                 child: Column(
                   children: [
                     Row(
@@ -63,11 +64,10 @@ class LoginScreen extends StatelessWidget {
                       children: [
                         Image.asset(
                           AssetsPath.iphoneIcon,
-                          height: 26,
-                          width: 18,
+                          height: 26.h,
                         ),
-                        const SizedBox(
-                          width: 10,
+                        SizedBox(
+                          width: 10.w,
                         ),
                         const Expanded(
                           child: TextField(
@@ -89,27 +89,27 @@ class LoginScreen extends StatelessWidget {
                     // const SizedBox(
                     //   height: 10,
                     // ),
-                    const Divider(
-                      height: 1,
+                    Divider(
+                      height: 1.h,
                       color: AppColors.primary,
                     )
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 30,
+              SizedBox(
+                height: 30.h,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 49),
+                padding: EdgeInsets.symmetric(horizontal: 49.w),
                 child: CommonButton(
                   title: 'Submit',
-                  height: 48,
+                  height: 48.h,
                   width: double.infinity,
                   onClick: () {},
                 ),
               ),
-              const SizedBox(
-                height: 50,
+              SizedBox(
+                height: 100.h,
               ),
             ],
           ),

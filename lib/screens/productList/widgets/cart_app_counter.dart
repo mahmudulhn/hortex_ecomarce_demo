@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/app_colors.dart';
+import '../../../core/common_widget/common_button.dart';
 
 class AddCartCounter extends StatefulWidget {
   const AddCartCounter({super.key});
@@ -17,27 +18,18 @@ class _AddCartCounterState extends State<AddCartCounter> {
   @override
   Widget build(context) {
     return isCounterZero
-        ? InkWell(
-            onTap: () {
-              setState(() {
-                isCounterZero = false;
-                counter = 1;
-              });
+        ? CommonButton(
+            title: 'Add',
+            height: 40.h,
+            width: 55.w,
+            onClick: () {
+              setState(
+                () {
+                  isCounterZero = false;
+                  counter = 1;
+                },
+              );
             },
-            child: Container(
-              // color: AppColors.bgGray,
-              margin: const EdgeInsets.all(16),
-              height: 30,
-              width: 30,
-              decoration: BoxDecoration(
-                color: AppColors.primary,
-                borderRadius: BorderRadius.circular(4),
-              ),
-              child: const Icon(
-                Icons.add,
-                color: AppColors.white,
-              ),
-            ),
           )
         : Container(
             height: 40.h,
@@ -55,11 +47,11 @@ class _AddCartCounterState extends State<AddCartCounter> {
                   onTap: () {
                     setState(() {
                       counter--;
-                    });
 
-                    if (counter == 0) {
-                      isCounterZero = false;
-                    }
+                      if (counter == 0) {
+                        isCounterZero = true;
+                      }
+                    });
                   },
                   child: SizedBox(
                     height: 40.h,

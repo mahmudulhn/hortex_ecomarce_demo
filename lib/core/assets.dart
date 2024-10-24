@@ -21,6 +21,7 @@ class AssetsPath {
   static const String cartIcon = "$iconPath/cart_icon.png";
   static const String searchIcon = "$iconPath/search_icon.png";
   static const String takaIcon = "$iconPath/taka_icon.png";
+  static const String deleteIcon = "$iconPath/delete_icon.png";
 
   static const String gridItemDummyIcon = "$iconPath/grid_item_dummy_icon.png";
 

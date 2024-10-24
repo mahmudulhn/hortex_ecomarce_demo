@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:hortex_ecomarce_demo/core/app_colors.dart';
 import 'package:hortex_ecomarce_demo/core/assets.dart';
-
-import '../../productList/widgets/cart_app_counter.dart';
+import 'package:hortex_ecomarce_demo/screens/home/widgets/cart_add_counter.dart';
 
 class ListItem extends StatefulWidget {
   const ListItem({
@@ -22,32 +23,35 @@ class _ListItemState extends State<ListItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      padding: EdgeInsets.symmetric(
+        horizontal: 20.w,
+        vertical: 10.h,
+      ),
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                height: 80,
-                width: 100,
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                height: 80.h,
+                width: 100.w,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(width: 1, color: AppColors.borderGray),
+                  borderRadius: BorderRadius.circular(10.r),
+                  border: Border.all(width: 1.w, color: AppColors.borderGray),
                 ),
                 child: Image.asset(AssetsPath.listItemDummyImage),
               ),
-              const SizedBox(
-                width: 12,
+              SizedBox(
+                width: 12.w,
               ),
-              const Column(
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Title',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w400,
                       color: AppColors.primary,
                     ),
@@ -55,7 +59,7 @@ class _ListItemState extends State<ListItem> {
                   Text(
                     '3.99 Tk',
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w400,
                       color: AppColors.black,
                     ),
@@ -73,12 +77,12 @@ class _ListItemState extends State<ListItem> {
                       },
                       child: Container(
                         // color: AppColors.bgGray,
-                        margin: const EdgeInsets.all(16),
-                        height: 30,
-                        width: 30,
+                        margin: EdgeInsets.all(16.h),
+                        height: 30.h,
+                        width: 30.w,
                         decoration: BoxDecoration(
                           color: AppColors.primary,
-                          borderRadius: BorderRadius.circular(4),
+                          borderRadius: BorderRadius.circular(4.r),
                         ),
                         child: const Icon(
                           Icons.add,
@@ -88,11 +92,11 @@ class _ListItemState extends State<ListItem> {
                     ),
             ],
           ),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: 20.h,
           ),
-          const Divider(
-            height: 1,
+          Divider(
+            height: 1.h,
             color: AppColors.borderGray,
           ),
         ],
