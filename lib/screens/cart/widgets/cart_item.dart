@@ -19,6 +19,7 @@ class CartItem extends StatelessWidget {
             child: Row(
               children: [
                 ClipRRect(
+                  // borderRadius: BorderRadius.circular(8.r),
                   child: Container(
                     decoration: BoxDecoration(
                       color: AppColors.white,
@@ -110,12 +111,19 @@ class CartItem extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {},
-                        child: SizedBox(
+                        child: Container(
                           height: 40.h,
                           width: 33.w,
+                          decoration: BoxDecoration(
+                            color: AppColors.white,
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(4.r),
+                              bottomLeft: Radius.circular(4.r),
+                            ),
+                          ),
                           child: const Icon(
                             Icons.remove,
-                            color: AppColors.borderGray,
+                            color: AppColors.black,
                             size: 20,
                           ),
                         ),
@@ -128,12 +136,20 @@ class CartItem extends StatelessWidget {
                       Expanded(
                         child: Container(
                           alignment: Alignment.center,
+                          decoration: const BoxDecoration(
+                            color: AppColors.white,
+                            border: Border(
+                              right: BorderSide(
+                                color: AppColors.primary,
+                              ),
+                            ),
+                          ),
                           child: Text(
                             '1',
                             style: TextStyle(
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
-                              color: AppColors.primary,
+                              color: AppColors.black,
                             ),
                           ),
                         ),
@@ -144,7 +160,7 @@ class CartItem extends StatelessWidget {
                           height: 40.h,
                           width: 33.w,
                           decoration: BoxDecoration(
-                            color: AppColors.primary,
+                            color: AppColors.white,
                             borderRadius: BorderRadius.only(
                               topRight: Radius.circular(4.r),
                               bottomRight: Radius.circular(4.r),
@@ -152,7 +168,7 @@ class CartItem extends StatelessWidget {
                           ),
                           child: const Icon(
                             Icons.add,
-                            color: AppColors.white,
+                            color: AppColors.black,
                             size: 20,
                           ),
                         ),

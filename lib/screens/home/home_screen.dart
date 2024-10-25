@@ -19,13 +19,14 @@ class HomeScreen extends StatelessWidget {
           child: Container(
             margin: EdgeInsets.only(left: 20.h),
             height: 30.h,
-            width: 30.r,
+            width: 30.w,
             child: Image.asset(AssetsPath.userIcon),
           ),
         ),
-        flexibleSpace: const Image(
-          image: AssetImage(AssetsPath.appbarBg),
+        flexibleSpace: Image(
+          image: const AssetImage(AssetsPath.appbarBg),
           fit: BoxFit.cover,
+          height: 150.h,
         ),
         backgroundColor: Colors.transparent,
         title: Text(
@@ -118,7 +119,7 @@ class HomeScreen extends StatelessWidget {
                             border: InputBorder.none,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
