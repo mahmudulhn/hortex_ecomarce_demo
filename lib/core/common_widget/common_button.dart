@@ -11,6 +11,8 @@ class CommonButton extends StatelessWidget {
     required this.width,
     required this.onClick,
     this.color,
+    this.borderRadius,
+    this.isBold,
   });
 
   final String title;
@@ -18,7 +20,9 @@ class CommonButton extends StatelessWidget {
   final double width;
   final void Function() onClick;
 
+  final bool? borderRadius;
   final int? color;
+  final bool? isBold;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +32,9 @@ class CommonButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: color == null ? AppColors.primary : Color(color!),
-          borderRadius: BorderRadius.circular(4.r),
+          borderRadius: borderRadius == null
+              ? BorderRadius.circular(4.r)
+              : BorderRadius.zero,
         ),
         height: height,
         width: width,
@@ -36,7 +42,7 @@ class CommonButton extends StatelessWidget {
           title,
           style: TextStyle(
             fontSize: 16.sp,
-            fontWeight: FontWeight.w700,
+            fontWeight: isBold == null ? FontWeight.w700 : FontWeight.normal,
             color: AppColors.white,
           ),
         ),
