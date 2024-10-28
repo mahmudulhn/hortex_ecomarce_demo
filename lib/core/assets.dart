@@ -12,6 +12,9 @@ class AssetsPath {
   static const String listItemDummyImage =
       "$imagePath/list_item_dummy_image.png";
   static const String productListBg = "$imagePath/product_list_bg.png";
+  static const String personalInfoBg = "$imagePath/personal_info_bg.png";
+  static const String userImage = "$imagePath/user_image.png";
+  static const String profilePic = "$imagePath/profile_pic.png";
 
   static const String iphoneIcon = "$iconPath/iphone.png";
   static const String backIcon = "$iconPath/back_icon.png";
@@ -23,6 +26,12 @@ class AssetsPath {
   static const String takaIcon = "$iconPath/taka_icon.png";
   static const String deleteIcon = "$iconPath/delete_icon.png";
   static const String redXIcon = "$iconPath/red_x_icon.png";
+  static const String redLogoutIcon = "$iconPath/logout_icon.png";
+  static const String referAFriendIcon = "$iconPath/refer_a_friend_icon.png";
+  static const String orderHistoryIcon = "$iconPath/order_history_icon.png";
+  static const String saveAdderssIcon = "$iconPath/save_adderss_icon.png";
+  static const String genderIcon = "$iconPath/gender_icon.png";
+  static const String ImageIcon = "$iconPath/image_icon.png";
 
   static const String gridItemDummyIcon = "$iconPath/grid_item_dummy_icon.png";
 

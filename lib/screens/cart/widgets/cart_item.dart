@@ -4,9 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/app_colors.dart';
 import '../../../core/assets.dart';
 
-class CartItem extends StatelessWidget {
+class CartItem extends StatefulWidget {
   const CartItem({super.key});
 
+  @override
+  State<CartItem> createState() => _CartItemState();
+}
+
+class _CartItemState extends State<CartItem> {
+  int _counter = 0;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -110,7 +116,11 @@ class CartItem extends StatelessWidget {
                   child: Row(
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          setState(() {
+                            _counter--;
+                          });
+                        },
                         child: Container(
                           height: 40.h,
                           width: 33.w,
@@ -145,7 +155,7 @@ class CartItem extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            '1',
+                            '$_counter',
                             style: TextStyle(
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
@@ -155,7 +165,11 @@ class CartItem extends StatelessWidget {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          setState(() {
+                            _counter++;
+                          });
+                        },
                         child: Container(
                           height: 40.h,
                           width: 33.w,
