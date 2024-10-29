@@ -32,9 +32,9 @@ class PersonalInfo extends StatelessWidget {
                       AssetsPath.userImage,
                     ),
                   ),
-                  Positioned(
-                    top: 38.h,
-                    // left: 20.w,
+                  Container(
+                    padding: EdgeInsets.only(top: 38.h),
+                    width: 400.w,
                     child: Row(
                       children: [
                         Container(
@@ -54,6 +54,12 @@ class PersonalInfo extends StatelessWidget {
                             color: AppColors.primary,
                           ),
                         ),
+                        const Spacer(),
+                        Image.asset(
+                          AssetsPath.editIconWhite,
+                          height: 20.h,
+                          width: 20.w,
+                        )
                       ],
                     ),
                   )

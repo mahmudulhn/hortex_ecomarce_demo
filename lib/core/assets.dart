@@ -32,6 +32,8 @@ class AssetsPath {
   static const String saveAdderssIcon = "$iconPath/save_adderss_icon.png";
   static const String genderIcon = "$iconPath/gender_icon.png";
   static const String ImageIcon = "$iconPath/image_icon.png";
+  static const String editIcon = "$iconPath/edit_icon.png";
+  static const String editIconWhite = "$iconPath/edit_icon_white.png";
 
   static const String gridItemDummyIcon = "$iconPath/grid_item_dummy_icon.png";
 

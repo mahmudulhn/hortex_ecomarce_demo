@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hortex_ecomarce_demo/screens/account_info_edit.dart';
+import 'package:hortex_ecomarce_demo/screens/Address/address_add_remove_screen.dart';
+import 'package:hortex_ecomarce_demo/screens/account_info_edit_screen.dart';
+import 'package:hortex_ecomarce_demo/screens/Address/saved_address_screen.dart';
 
 import 'package:hortex_ecomarce_demo/screens/cart/cart_screen.dart';
 import 'package:hortex_ecomarce_demo/screens/home/home_screen.dart';
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: const AccountInfoEdit(),
+            home: const AddressAddRemoveScreen(),
           );
         });
   }

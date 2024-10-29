@@ -5,14 +5,14 @@ import 'package:hortex_ecomarce_demo/core/app_colors.dart';
 
 import '../core/assets.dart';
 
-class AccountInfoEdit extends StatefulWidget {
-  const AccountInfoEdit({super.key});
+class AccountInfoEditScreen extends StatefulWidget {
+  const AccountInfoEditScreen({super.key});
 
   @override
-  State<AccountInfoEdit> createState() => _AccountInfoEditState();
+  State<AccountInfoEditScreen> createState() => _AccountInfoEditScreenState();
 }
 
-class _AccountInfoEditState extends State<AccountInfoEdit> {
+class _AccountInfoEditScreenState extends State<AccountInfoEditScreen> {
   final TextEditingController nameController =
       TextEditingController(text: 'Tariqul Islam');
   final TextEditingController phoneController =
