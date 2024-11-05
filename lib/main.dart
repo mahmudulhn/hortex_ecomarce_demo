@@ -8,6 +8,7 @@ import 'package:hortex_ecomarce_demo/screens/cart/cart_screen.dart';
 import 'package:hortex_ecomarce_demo/screens/home/home_screen.dart';
 import 'package:hortex_ecomarce_demo/screens/login_screen.dart';
 import 'package:hortex_ecomarce_demo/screens/my_account.dart';
+import 'package:hortex_ecomarce_demo/orderHistory/order_history_list_screen.dart';
 import 'package:hortex_ecomarce_demo/screens/otp_screen.dart';
 import 'package:hortex_ecomarce_demo/screens/personal_info.dart';
 import 'package:hortex_ecomarce_demo/screens/productList/product_list_screen.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: const AddressAddRemoveScreen(),
+            home: OrderHistoryListScreen(),
           );
         });
   }
